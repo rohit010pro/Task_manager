@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="box">
+        <header>
+            <h2 class="heading">Task App</h2>
+            <button class="round_icon" id="showAddBtn">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+        </header>
+
+        <div class="add_task">
+            <div class="input_box">
+                <input type="text" placeholder="Add a task" id="input_task">
+                <span class="error_msg">Title required</span>
+            </div>
+            <button class="round_icon" id="add_btn">
+                <span class="material-symbols-outlined">send</span>
+            </button>
+        </div>
+
+        <div class="task_list">
+            <h3>Task List</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
