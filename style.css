@@ -130,8 +130,9 @@ header .heading {
     overflow: hidden auto;
 }
 
-.task_list::-webkit-scrollbar {
+.task_list::-webkit-scrollbar{
     width: 5px;
+    scrollbar-width: 5px;
 }
 
 .task_list::-webkit-scrollbar-track {
