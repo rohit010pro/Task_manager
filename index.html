@@ -21,7 +21,7 @@
     <div class="box">
         <header>
             <h2 class="heading">Task App</h2>
-            <button class="round_icon" id="showAddBtn">
+            <button class="round_icon" id="show-add-form-btn">
                 <span class="material-symbols-outlined">add</span>
             </button>
         </header>
@@ -33,9 +33,16 @@
             </div>
         </div>
 
-        <div class="task_list">
-            <h3>Task List</h3>
+        <div class="controls">
+            <div class="filters">
+              <span class="active" id="all">All</span>
+              <span id="pending">Pending</span>
+              <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
         </div>
+
+        <div class="task_list"></div>
     </div>
 
     <script src="script.js"></script>
