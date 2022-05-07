@@ -77,6 +77,8 @@ const editTask = (id, taskTitle) => {
     inputTask.value = taskTitle;
     isEdit = true;
     editId = id;
+    addForm.classList.add('show');
+    addFormBtn.classList.add('rotate');
 }
 
 // Deleting Task

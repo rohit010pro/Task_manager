@@ -58,9 +58,11 @@ header .heading {
     font-weight: 500;
 }
 
-#showAddBtn.rotate {
+#showAddBtn{
     transition: transform 0.5s;
-    transform: rotate(45deg);
+}
+#showAddBtn.rotate {
+    transform: rotate(135deg);
 }
 
 /* Add Task Form*/
@@ -169,7 +171,7 @@ header .heading {
 .task h4 {
     flex-grow: 1;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     color: #333;
 }
 
