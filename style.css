@@ -122,15 +122,6 @@ header .heading {
     }
 }
 
-.add_task button {
-    background: #f2f2f2;
-    color: #333;
-}
-
-.add_task button:hover {
-    background: rgb(220, 220, 220);
-}
-
 /* Task List */
 .task_list {
     padding-right: 6px;
@@ -159,10 +150,11 @@ header .heading {
     font-weight: 500;
 }
 
+/* Single Task */
 .task {
     display: flex;
     align-items: center;
-    padding: 8px 6px;
+    padding: 10px 8px;
     background-color: #f2f2f2;
     border-radius: 3px;
     margin-bottom: 8px;
@@ -170,9 +162,9 @@ header .heading {
 
 .task h4 {
     flex-grow: 1;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
-    color: #333;
+    margin-left: 5px;
 }
 
 .task button {
@@ -195,20 +187,21 @@ header .heading {
     color: var(--error-color);
 }
 
-/* No Found */
+/* No Task Found */
 .empty {
     text-align: center;
     padding: 15px 0;
     color: var(--primary-color);
 }
 
-
+/* Media Query */
 
 @media (max-width: 400px) {
     body{
       padding: 0 10px;
     }
-    .wrapper {
-      padding: 20px 0;
+    .box {
+      padding: 20px;
+      margin: 110px auto;
     }
 }
