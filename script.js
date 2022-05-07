@@ -1,14 +1,10 @@
-const inputTask = document.querySelector('#input_task');
-const addBtn = document.querySelector('#add_btn');
-const tasklist = document.querySelector('.task_list');
-const addFormBtn = document.querySelector('#showAddBtn');
-const addForm = document.querySelector('.add_task');
+const inputTask = document.querySelector('#input_task'),
+tasklist = document.querySelector('.task_list'),
+addFormBtn = document.querySelector('#showAddBtn'),
+addForm = document.querySelector('.add_task');
 
 var isEdit = false;
 var editId = 0;
-
-// const editBtns = document.querySelectorAll('.task .edit');
-// const deleteBtns = document.querySelectorAll('.task .delete');
 
 // Display Task
 const showTasks = () => {
@@ -37,7 +33,9 @@ const showTasks = () => {
 }
 
 // Adding Task
-const addTask = () => {
+const addTask = (e) => {
+    if(e.key != "Enter")
+        return;
     let taskTitle = htmlEntities(inputTask.value.trim());
 
     let parent = inputTask.parentElement;
@@ -111,4 +109,4 @@ inputTask.addEventListener('input', () => {
 });
 
 showTasks();
-addBtn.addEventListener('click', addTask);
+inputTask.addEventListener('keyup', addTask);

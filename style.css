@@ -1,15 +1,15 @@
-:root{
-    --primary-color:orangered;
-    --secondary-color:#fff;
-    --error-color:#D8000C;
-    --success-color:#4F8A10;
+:root {
+    --primary-color: orangered;
+    --secondary-color: #fff;
+    --error-color: #d8000c;
+    --success-color: #4f8a10;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .round_icon {
@@ -24,29 +24,26 @@
     border: none;
     outline: none;
 }
+
 .round_icon span {
     line-height: 35px;
 }
 
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    width: 100%;
     height: 100vh;
+    overflow: hidden;
     background-color: #dedede;
 }
 
 .box {
-    margin: 10px;
-    padding: 20px 15px;
     width: 100%;
-    max-width: 420px;
-    border-radius: 6px;
-    background-color: var(--secondary-color);
-    box-shadow: 2px 2px 2px rgb(234, 234, 234),
-        -2px -2px 2px rgb(234, 234, 234);
+    max-width: 405px;
+    padding: 28px 20px 30px;
+    margin: 137px auto;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -61,85 +58,97 @@ header .heading {
     font-weight: 500;
 }
 
-#showAddBtn.rotate{
+#showAddBtn.rotate {
     transition: transform 0.5s;
     transform: rotate(45deg);
 }
 
 /* Add Task Form*/
 .add_task {
-    display: flex;
     height: 0px;
-    overflow: hidden; 
+    overflow: hidden;
 }
-.add_task.show{
+
+.add_task.show {
     transition: height 1s;
-    height: fit-content;   
+    height: fit-content;
 }
 
 /* Input Box */
-.input_box{
+.input_box {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
-.input_box input{
+
+.input_box input {
     flex-grow: 1;
     font-size: 16px;
     padding: 6px;
     border-width: 0 0 2px 0;
     outline: none;
 }
-.input_box .error_msg{
+
+.input_box .error_msg {
     display: inline-block;
-    margin-top: 3px;
+
+    margin: 3px 0 0 3px;
     font-size: 12px;
     color: var(--error-color);
     visibility: hidden;
 }
 
-.input_box.error input{
+.input_box.error input {
     animation: shake 0.3s;
     border-color: var(--error-color);
 }
-.input_box.error .error_msg{
+
+.input_box.error .error_msg {
     visibility: visible;
 }
+
 @keyframes shake {
-    25%{ transform: translateX(4px);}
-    50%{ transform: translateX(-4px);}
-    75%{ transform: translateX(4px);}
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
 }
 
 .add_task button {
     background: #f2f2f2;
     color: #333;
 }
-.add_task button:hover{
+
+.add_task button:hover {
     background: rgb(220, 220, 220);
 }
-
 
 /* Task List */
 .task_list {
     padding-right: 6px;
     margin-top: 20px;
-    height: 340px;
-    overflow: hidden scroll;
+    height: 280px;
+    overflow: hidden auto;
 }
 
 .task_list::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
 }
 
-/* .task_list::-webkit-scrollbar-track {
-    border-radius: 50px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-} */
+.task_list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
 
 .task_list::-webkit-scrollbar-thumb {
-    border-radius: 50px;
-    background-color: #bbb;
+    background: #e6e6e6;
+    border-radius: 25px;
 }
 
 .task_list h3 {
@@ -175,17 +184,29 @@ header .heading {
 .task button span {
     font-size: 18px;
 }
-.task button.edit{
+
+.task button.edit {
     color: var(--success-color);
 }
 
-.task button.delete{
+.task button.delete {
     color: var(--error-color);
 }
 
 /* No Found */
-.empty{
+.empty {
     text-align: center;
     padding: 15px 0;
     color: var(--primary-color);
+}
+
+
+
+@media (max-width: 400px) {
+    body{
+      padding: 0 10px;
+    }
+    .wrapper {
+      padding: 20px 0;
+    }
 }
