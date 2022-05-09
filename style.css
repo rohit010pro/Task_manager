@@ -58,22 +58,18 @@ header .heading {
   font-weight: 500;
 }
 
-#showAddBtn {
-  transition: transform 0.5s;
+#show-add-form-btn {
+  transition: transform 0.3s;
 }
-#showAddBtn.rotate {
+#show-add-form-btn.rotate {
   transform: rotate(135deg);
 }
 
 /* Add Task Form*/
 .add_task {
-  height: 0px;
+  max-height: 0;
   overflow: hidden;
-}
-
-.add_task.show {
-  transition: height 1s;
-  height: fit-content;
+  transition: max-height 0.3s ease-in-out;
 }
 
 /* Input Box */

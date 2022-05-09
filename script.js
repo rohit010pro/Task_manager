@@ -1,4 +1,4 @@
-const 
+const
     addFormBtn = document.querySelector("#show-add-form-btn"),
     inputTask = document.querySelector("#input_task"),
     tasklist = document.querySelector(".task_list"),
@@ -15,8 +15,8 @@ const showTasks = (filter = "all") => {
     let html = "";
 
     if (allTask !== null) {
-        allTask.forEach((task)=> {
-            if(filter == task.status || filter == "all"){
+        allTask.forEach((task) => {
+            if (filter == task.status || filter == "all") {
                 let completed = (task.status == "completed") ? "checked" : "";
                 html += `
                 <div class="task">
@@ -34,7 +34,7 @@ const showTasks = (filter = "all") => {
             }
         });
     }
-    tasklist.innerHTML = html ||  `<div class="empty">No task to show</div>`;
+    tasklist.innerHTML = html || `<div class="empty">No task to show</div>`;
 
     let checkTask = tasklist.querySelectorAll(".task");
     !checkTask.length ? clearAllBtn.classList.remove("active") : clearAllBtn.classList.add("active");
@@ -45,12 +45,12 @@ const addTask = (e) => {
     if (e.key != "Enter") return;
 
     let taskTitle = htmlEntities(inputTask.value.trim()),
-    parent = inputTask.parentElement;
+        parent = inputTask.parentElement;
 
     if (taskTitle === "") {
         parent.classList.add("error");
         return;
-    } else 
+    } else
         parent.classList.remove("error");
 
     const allTask = JSON.parse(localStorage.getItem("tasks"));
@@ -58,7 +58,7 @@ const addTask = (e) => {
 
     if (isEdit) {
         for (let i = 0; i < allTask.length; i++) {
-            if (allTask[i].id == editId){
+            if (allTask[i].id == editId) {
                 allTask[i].taskTitle = taskTitle;
                 break;
             }
@@ -82,21 +82,21 @@ const addTask = (e) => {
     showTasks();
 };
 
-const updateStatus = (selectedTask) =>  {
+const updateStatus = (selectedTask) => {
     const allTask = JSON.parse(localStorage.getItem("tasks"));
 
     let task = selectedTask.parentElement.querySelector('.task_name');
 
-    if(selectedTask.checked){
+    if (selectedTask.checked) {
         task.classList.add("checked");
-        allTask.forEach((task)=>{
-            if(selectedTask.id == task.id)
+        allTask.forEach((task) => {
+            if (selectedTask.id == task.id)
                 task.status = 'completed';
         });
-    }else{
+    } else {
         task.classList.remove("checked");
-        allTask.forEach((task)=>{
-            if(selectedTask.id == task.id)
+        allTask.forEach((task) => {
+            if (selectedTask.id == task.id)
                 task.status = 'pending';
         });
     }
@@ -117,7 +117,7 @@ const editTask = (id, taskTitle) => {
 const deleteTask = (id) => {
     let allTask = JSON.parse(localStorage.getItem("tasks"));
 
-    if(allTask === null) {
+    if (allTask === null) {
         showTasks();
         return;
     }
@@ -148,7 +148,10 @@ const htmlEntities = (str) => {
 };
 
 addFormBtn.addEventListener("click", () => {
-    addForm.classList.toggle("show");
+    if (addForm.style.maxHeight)
+        addForm.style.maxHeight = null;
+    else
+        addForm.style.maxHeight = addForm.scrollHeight + "px";
     addFormBtn.classList.toggle("rotate");
 });
 
