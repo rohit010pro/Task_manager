@@ -1,10 +1,10 @@
 const
     addFormBtn = document.querySelector("#show-add-form-btn"),
-    inputTask = document.querySelector("#input_task"),
-    tasklist = document.querySelector(".task_list"),
-    addForm = document.querySelector(".add_task"),
+    inputTask = document.querySelector("#input-task"),
+    tasklist = document.querySelector(".task-list"),
+    addForm = document.querySelector(".add-task"),
     filters = document.querySelectorAll(".filters span"),
-    clearAllBtn = document.querySelector('.clear-btn');
+    clearAllBtn = document.querySelector('#clear-btn');
 
 var isEdit = false;
 var editId = 0;
@@ -22,7 +22,7 @@ const showTasks = (filter = "all") => {
                 <div class="task">
                     <label for="${task.id}">
                         <input onclick="updateStatus(this)" type="checkbox" id="${task.id}" ${completed}>
-                        <p class="task_name ${completed}">${task.taskTitle}</p>
+                        <p class="task-name ${completed}">${task.taskTitle}</p>
                     </label>
                     <button class="edit" onclick="editTask(${task.id},'${task.taskTitle}')">
                         <span class="material-symbols-outlined icon">edit</span>
@@ -85,7 +85,7 @@ const addTask = (e) => {
 const updateStatus = (selectedTask) => {
     const allTask = JSON.parse(localStorage.getItem("tasks"));
 
-    let task = selectedTask.parentElement.querySelector('.task_name');
+    let task = selectedTask.parentElement.querySelector('.task-name');
 
     if (selectedTask.checked) {
         task.classList.add("checked");
@@ -101,7 +101,6 @@ const updateStatus = (selectedTask) => {
         });
     }
     localStorage.setItem("tasks", JSON.stringify(allTask));
-    // showTasks();
 }
 
 // Editing Task
