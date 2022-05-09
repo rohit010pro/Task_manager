@@ -101,7 +101,7 @@ const updateStatus = (selectedTask) =>  {
         });
     }
     localStorage.setItem("tasks", JSON.stringify(allTask));
-    showTasks();
+    // showTasks();
 }
 
 // Editing Task
