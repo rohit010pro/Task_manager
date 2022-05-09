@@ -168,5 +168,18 @@ filters.forEach((btn) => {
     });
 });
 
+if (localStorage.getItem('isDarkTheme') == "true")
+    document.body.classList.add('theme-dark');
+
+document.querySelector('.theme-icon').addEventListener('click', () => {
+    if (document.body.classList.contains('theme-dark')) {
+        localStorage.setItem("isDarkTheme", "false");
+        document.body.classList.remove('theme-dark');
+    } else {
+        localStorage.setItem("isDarkTheme", "true");
+        document.body.classList.add('theme-dark');
+    }
+});
+
 showTasks();
 inputTask.addEventListener("keyup", addTask);

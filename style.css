@@ -3,13 +3,75 @@
   --secondary-color: #fff;
   --error-color: #d8000c;
   --success-color: #4f8a10;
+  --dark-text-color: #e8eaed;
+  --dark-background-color: #202124;
+  --dark-background-color-alt: #2c2c2c;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   font-family: "Roboto", sans-serif;
+  /* Light Theme */
+  --text-color: #333;
+  --background-color: #eee;
+  --background-color-alt: #fff;
+
+  color: var(--text-color);
+  background: var(--background-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body.theme-dark {
+  --text-color: var(--dark-text-color);
+  --background-color: var(--dark-background-color);
+  --background-color-alt: var(--dark-background-color-alt);
+}
+
+.theme-icon{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.theme-icon span{
+  font-size: 32px;
+  line-height: 35px;
+  user-select: none;
+}
+
+
+.box {
+  width: 100%;
+  max-width: 405px;
+  padding: 28px 20px 30px;
+  margin: 137px auto;
+  background: var(--background-color-alt);
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+header .heading {
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .round_icon {
@@ -29,38 +91,10 @@
   line-height: 35px;
 }
 
-body {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #dedede;
-}
-
-.box {
-  width: 100%;
-  max-width: 405px;
-  padding: 28px 20px 30px;
-  margin: 137px auto;
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-header .heading {
-  font-size: 24px;
-  font-weight: 500;
-}
-
 #show-add-form-btn {
   transition: transform 0.3s;
 }
+
 #show-add-form-btn.rotate {
   transform: rotate(135deg);
 }
@@ -84,6 +118,8 @@ header .heading {
   padding: 6px;
   border-width: 0 0 2px 0;
   outline: none;
+  background-color: transparent;
+  color: var(--text-color);
 }
 
 .input_box .error_msg {
@@ -128,9 +164,9 @@ header .heading {
 
 .filters span {
   margin: 0 8px;
-  color: #444444;
   cursor: pointer;
 }
+
 .filters span:first-child {
   margin-left: 0;
 }
@@ -138,6 +174,7 @@ header .heading {
 .filters span.active {
   color: var(--primary-color);
 }
+
 .controls .clear-btn {
   border: none;
   opacity: 0.6;
@@ -152,10 +189,12 @@ header .heading {
   transition: transform 0.25s ease;
   background: var(--primary-color);
 }
+
 .clear-btn.active {
   opacity: 0.9;
   pointer-events: auto;
 }
+
 .clear-btn:active {
   transform: scale(0.93);
 }
@@ -183,34 +222,30 @@ header .heading {
   border-radius: 25px;
 }
 
-.task_list h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
 /* Single Task */
 .task {
   display: flex;
   align-items: center;
   padding: 10px 8px;
-  background-color: #f2f2f2;
   border-radius: 3px;
   margin-bottom: 8px;
+  /* background-color: #f2f2f2; */
+  border-bottom: 1px solid var(--background-color);
 }
 
 .task label {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
-.task label .task_name{
-    font-size: 17px;
-    font-weight: 400;
+
+.task label .task_name {
+  font-weight: 400;
 }
-.task label .task_name.checked{
-    text-decoration: line-through;
+
+.task label .task_name.checked {
+  text-decoration: line-through;
 }
 
 .task button {
@@ -246,6 +281,7 @@ header .heading {
   body {
     padding: 0 10px;
   }
+
   .box {
     padding: 20px;
     margin: 110px auto;
