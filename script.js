@@ -178,6 +178,7 @@ document.querySelector('.theme-icon').addEventListener('click', () => {
         localStorage.setItem("isDarkTheme", "true");
         document.body.classList.add('theme-dark');
     }
+    location.reload();
 });
 
 showTasks();
