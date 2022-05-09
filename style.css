@@ -35,6 +35,10 @@ body.theme-dark {
   --background-color-alt: var(--dark-background-color-alt);
 }
 
+.icon{
+  user-select: none;
+}
+
 .theme-icon{
   position: absolute;
   top: 20px;
@@ -48,9 +52,7 @@ body.theme-dark {
 .theme-icon span{
   font-size: 32px;
   line-height: 35px;
-  user-select: none;
 }
-
 
 .box {
   width: 100%;

@@ -25,10 +25,10 @@ const showTasks = (filter = "all") => {
                         <p class="task_name ${completed}">${task.taskTitle}</p>
                     </label>
                     <button class="edit" onclick="editTask(${task.id},'${task.taskTitle}')">
-                        <span class="material-symbols-outlined">edit</span>
+                        <span class="material-symbols-outlined icon">edit</span>
                     </button>
                     <button class="delete" onclick="deleteTask(${task.id})">
-                        <span class="material-symbols-outlined">delete</span>
+                        <span class="material-symbols-outlined icon">delete</span>
                     </button>
                 </div>`;
             }
