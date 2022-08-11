@@ -1,6 +1,6 @@
 # Task Manager App
 
-Visit: [Task manager](https://rohit010pro.github.io/task_manager/)
+Live at: [Task manager](https://rohit010pro.github.io/Task_manager/)
 
 
 ![alt text](./images/task_manager.png)
